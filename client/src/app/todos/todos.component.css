@@ -1,0 +1,9 @@
+.todos {
+  width: 400px;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}

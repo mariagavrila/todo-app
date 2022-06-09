@@ -1,0 +1,27 @@
+<h1>Todos</h1>
+
+<form>
+  <input type="text" name="title" [(ngModel)]="todo.title" placeholder="title" required>
+  <button type="button" (click)="createTodo()">{{todo._id !=="" ? "Update" : "Add"}}</button>
+</form>
+
+<h4>Incomplete</h4>
+<div class="todos">
+  <div *ngFor="let todo of incompleteTodos" class="todo">
+    <div class="todo-title">{{todo.title}}</div>
+    <div class="todo-icon">
+      <button type="button" (click)="setTodo(todo)">Edit</button>
+      <button type="button" (click)="doneTodo(todo)">Done</button>
+    </div>
+  </div>
+</div>
+<h4>Done</h4>
+<div class="todos">
+  <div *ngFor="let todo of doneTodos" class="todo">
+    <div class="todo-title">{{todo.title}}</div>
+    <div class="todo-icon">
+      <button type="button" (click)="deleteTodo(todo._id)">Remove</button>
+    </div>
+  </div>
+</div>
+
